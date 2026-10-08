@@ -76,7 +76,7 @@ export default function PageTransition({ isTransitioning, targetTitle }) {
             fontWeight: 700,
           }}
         >
-          {targetTitle || 'NEXUS • GEÇİŞ'}
+          {targetTitle || 'DEMO • GEÇİŞ'}
         </span>
       </div>
     </div>

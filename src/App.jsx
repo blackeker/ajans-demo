@@ -3,13 +3,12 @@ import Navbar from './components/Navbar';
 import Hero3D from './components/Hero3D';
 import ServicesSection from './components/ServicesSection';
 import PortfolioSection from './components/PortfolioSection';
-import TechLabSection from './components/TechLabSection';
-import GitHubSection from './components/GitHubSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import PageTransition from './components/PageTransition';
-import { ArrowRight, Sparkles, Play, Zap, Shield, Trophy } from 'lucide-react';
+import { sound } from './utils/audio';
+import { ArrowRight, Sparkles, Zap, Trophy, Shield } from 'lucide-react';
 import { GithubIcon } from './components/Icons';
 
 export default function App() {
@@ -17,19 +16,16 @@ export default function App() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [transitionTitle, setTransitionTitle] = useState('');
   const [isSoundOn, setIsSoundOn] = useState(true);
-  const [calculatedScope, setCalculatedScope] = useState(null);
 
   const handleNavigate = (sectionId) => {
     const titles = {
-      hero: 'NEXUS • 3D GİRİŞ',
-      services: 'NEXUS • HİZMETLER',
-      portfolio: 'NEXUS • PROJELER',
-      lab: 'NEXUS • 3D LABORATUVAR',
-      github: 'NEXUS • GITHUB DEMO',
-      contact: 'NEXUS • İLETİŞİM & TEKLİF',
+      hero: 'DEMO • GİRİŞ',
+      services: 'DEMO • HİZMETLER',
+      portfolio: 'DEMO • PROJELER',
+      contact: 'DEMO • İLETİŞİM',
     };
 
-    setTransitionTitle(titles[sectionId] || 'NEXUS • GEÇİŞ');
+    setTransitionTitle(titles[sectionId] || 'DEMO • GEÇİŞ');
     setIsTransitioning(true);
     sound.playWarp();
 
@@ -50,20 +46,15 @@ export default function App() {
     setIsSoundOn(newState);
   };
 
-  const handleSelectScope = (scopeData) => {
-    setCalculatedScope(scopeData);
-    handleNavigate('contact');
-  };
-
   return (
     <div style={{ position: 'relative', minHeight: '100vh', backgroundColor: 'var(--bg-dark)' }}>
-      {/* Custom Fluid Cursor */}
+      {/* Dynamic Fluid Cursor */}
       <CustomCursor />
 
-      {/* Integrated Shutter Page Transition Curtain */}
+      {/* Shutter Page Transition Curtain */}
       <PageTransition isTransitioning={isTransitioning} targetTitle={transitionTitle} />
 
-      {/* Fixed Futuristic Header / Navbar */}
+      {/* Modern Navigation Header */}
       <Navbar
         activeSection={activeSection}
         onNavigate={handleNavigate}
@@ -79,20 +70,20 @@ export default function App() {
         style={{
           position: 'relative',
           minHeight: '100vh',
-          paddingTop: '100px',
+          paddingTop: '90px',
           display: 'flex',
           alignItems: 'center',
           overflow: 'hidden',
         }}
       >
-        {/* Subtle background glow spots */}
+        {/* Subtle ambient lighting glows */}
         <div
           style={{
             position: 'absolute',
             top: '20%',
             left: '10%',
-            width: '450px',
-            height: '450px',
+            width: '420px',
+            height: '420px',
             borderRadius: '50%',
             background: 'radial-gradient(circle, rgba(0, 245, 212, 0.12) 0%, transparent 70%)',
             pointerEvents: 'none',
@@ -102,10 +93,10 @@ export default function App() {
         <div
           style={{
             position: 'absolute',
-            top: '40%',
-            right: '5%',
-            width: '500px',
-            height: '500px',
+            top: '35%',
+            right: '8%',
+            width: '480px',
+            height: '480px',
             borderRadius: '50%',
             background: 'radial-gradient(circle, rgba(157, 78, 221, 0.14) 0%, transparent 70%)',
             pointerEvents: 'none',
@@ -117,7 +108,7 @@ export default function App() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
               alignItems: 'center',
               gap: '40px',
             }}
@@ -127,43 +118,43 @@ export default function App() {
               <div
                 className="glass-pill"
                 style={{
-                  marginBottom: '24px',
+                  marginBottom: '20px',
                   color: '#00f5d4',
                   border: '1px solid rgba(0, 245, 212, 0.3)',
                 }}
               >
                 <Sparkles size={14} />
-                <span>YENİ NESİL DİJİTAL AJANS DENEYİMİ</span>
+                <span>3D ETKİLEŞİMLİ AJANS WEB SİTESİ DEMOSU</span>
               </div>
 
               <h1
                 style={{
-                  fontSize: 'clamp(2.4rem, 5.2vw, 4.4rem)',
+                  fontSize: 'clamp(2.4rem, 5vw, 4.2rem)',
                   fontWeight: 800,
-                  lineHeight: 1.08,
-                  marginBottom: '24px',
+                  lineHeight: 1.1,
+                  marginBottom: '22px',
                   letterSpacing: '-0.03em',
                 }}
               >
-                Sıradan Web'i Unutun.{' '}
+                Klasik Web'i Aşın.{' '}
                 <span className="text-gradient">3D Boyuta Geçin.</span>
               </h1>
 
               <p
                 style={{
-                  fontSize: 'clamp(1rem, 1.8vw, 1.25rem)',
+                  fontSize: 'clamp(1rem, 1.6vw, 1.2rem)',
                   color: '#94a3b8',
-                  lineHeight: 1.6,
-                  marginBottom: '36px',
-                  maxWidth: '560px',
+                  lineHeight: 1.65,
+                  marginBottom: '34px',
+                  maxWidth: '540px',
                 }}
               >
-                Klasik, sıkıcı ve şablon web siteleri geride kaldı. WebGL, Three.js ve akıcı sayfa
-                geçişleriyle markanızı ziyaretçilerin belleğine kazıyan ödüllü dijital deneyimler tasarlıyoruz.
+                Girişte donanım hızlandırmalı 3D sahneler, akıcı sayfa geçişleri ve modern estetikle
+                donatılmış interaktif ajans web sitesi demosu.
               </p>
 
               {/* Action Buttons */}
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '44px' }}>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '40px' }}>
                 <button
                   onClick={() => handleNavigate('portfolio')}
                   className="btn-primary"
@@ -173,56 +164,59 @@ export default function App() {
                   <ArrowRight size={18} />
                 </button>
 
-                <button
-                  onClick={() => handleNavigate('github')}
+                <a
+                  href="https://github.com/blackeker/ajans-demo"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-secondary"
                   id="hero-github-btn"
+                  style={{ textDecoration: 'none' }}
                 >
                   <GithubIcon size={18} />
-                  <span>GitHub Demo Repo</span>
-                </button>
+                  <span>GitHub Demo (ajans-demo)</span>
+                </a>
               </div>
 
-              {/* Agency Trust Badges */}
+              {/* Minimal Badges */}
               <div
                 style={{
                   display: 'grid',
                   gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: '16px',
+                  gap: '14px',
                   borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-                  paddingTop: '28px',
+                  paddingTop: '24px',
                 }}
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#00f5d4', marginBottom: '4px' }}>
                     <Zap size={16} />
-                    <span style={{ fontWeight: 800, fontSize: '1.2rem', fontFamily: 'var(--font-mono)' }}>60 FPS</span>
+                    <span style={{ fontWeight: 800, fontSize: '1.15rem', fontFamily: 'var(--font-mono)' }}>60 FPS</span>
                   </div>
-                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>WebGL Hızlandırma</span>
+                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>WebGL 3D Render</span>
                 </div>
 
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#f72585', marginBottom: '4px' }}>
                     <Trophy size={16} />
-                    <span style={{ fontWeight: 800, fontSize: '1.2rem', fontFamily: 'var(--font-mono)' }}>%100</span>
+                    <span style={{ fontWeight: 800, fontSize: '1.15rem', fontFamily: 'var(--font-mono)' }}>Akıcı</span>
                   </div>
-                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Özgün Tasarım</span>
+                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Sayfa Geçişleri</span>
                 </div>
 
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#3a86ff', marginBottom: '4px' }}>
                     <Shield size={16} />
-                    <span style={{ fontWeight: 800, fontSize: '1.2rem', fontFamily: 'var(--font-mono)' }}>v1.0 Demo</span>
+                    <span style={{ fontWeight: 800, fontSize: '1.15rem', fontFamily: 'var(--font-mono)' }}>Demo</span>
                   </div>
-                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>GitHub Açık Kaynak</span>
+                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Açık Kaynak Kod</span>
                 </div>
               </div>
             </div>
 
-            {/* Right: Three.js 3D Centerpiece Canvas */}
+            {/* Right: Three.js 3D Centerpiece */}
             <div
               style={{
-                height: '560px',
+                height: '540px',
                 width: '100%',
                 position: 'relative',
               }}
@@ -234,9 +228,9 @@ export default function App() {
       </section>
 
       {/* ========================================================
-          SERVICES SECTION & ESTIMATOR
+          SERVICES SECTION (CLEAN & MINIMAL)
           ======================================================== */}
-      <ServicesSection onSelectScope={handleSelectScope} />
+      <ServicesSection onNavigate={handleNavigate} />
 
       {/* ========================================================
           PORTFOLIO SECTION
@@ -244,19 +238,9 @@ export default function App() {
       <PortfolioSection />
 
       {/* ========================================================
-          TECH LAB & PERFORMANCE BENCHMARK
+          CONTACT SECTION
           ======================================================== */}
-      <TechLabSection />
-
-      {/* ========================================================
-          GITHUB INTEGRATION & DEMO HUB
-          ======================================================== */}
-      <GitHubSection />
-
-      {/* ========================================================
-          CONTACT & BRIEF SUBMISSION
-          ======================================================== */}
-      <ContactSection incomingScope={calculatedScope} />
+      <ContactSection />
 
       {/* ========================================================
           FOOTER

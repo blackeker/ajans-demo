@@ -19,8 +19,6 @@ export default function Navbar({ activeSection, onNavigate, isSoundOn, toggleSou
     { id: 'hero', label: 'Giriş' },
     { id: 'services', label: 'Hizmetler' },
     { id: 'portfolio', label: 'Projeler' },
-    { id: 'lab', label: '3D Laboratuvar' },
-    { id: 'github', label: 'GitHub Demo' },
     { id: 'contact', label: 'İletişim' },
   ];
 
@@ -74,7 +72,7 @@ export default function Navbar({ activeSection, onNavigate, isSoundOn, toggleSou
             }}
           >
             <span style={{ color: '#050608', fontWeight: 900, fontFamily: 'var(--font-display)', fontSize: '1.2rem' }}>
-              N
+              D
             </span>
           </div>
           <div>
@@ -88,7 +86,7 @@ export default function Navbar({ activeSection, onNavigate, isSoundOn, toggleSou
                   color: '#fff',
                 }}
               >
-                NEXUS
+                DEMO
               </span>
               <span
                 style={{
@@ -101,7 +99,7 @@ export default function Navbar({ activeSection, onNavigate, isSoundOn, toggleSou
                   fontWeight: 700,
                 }}
               >
-                3D AJANS
+                AJANS
               </span>
             </div>
           </div>

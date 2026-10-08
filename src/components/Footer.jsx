@@ -64,15 +64,12 @@ export default function Footer({ onNavigate }) {
                   fontSize: '1rem',
                 }}
               >
-                N
+                D
               </div>
               <span style={{ fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1.3rem', color: '#fff' }}>
-                NEXUS STUDIO
+                DEMO AJANS
               </span>
             </div>
-            <p style={{ fontSize: '0.9rem', color: '#94a3b8', lineHeight: 1.6, maxWidth: '300px', marginBottom: '20px' }}>
-              Geleneksel web sitelerini geride bırakan, 3D WebGL ve yapay zeka destekli yeni nesil dijital ajans.
-            </p>
 
             {/* Live Clock & Status */}
             <div
@@ -108,9 +105,7 @@ export default function Footer({ onNavigate }) {
                 { id: 'hero', label: 'Ana Sayfa & 3D Giriş' },
                 { id: 'services', label: 'Hizmetlerimiz' },
                 { id: 'portfolio', label: 'Projelerimiz' },
-                { id: 'lab', label: 'Performans Lab' },
-                { id: 'github', label: 'GitHub Demo Deposu' },
-                { id: 'contact', label: 'Teklif & İletişim' },
+                { id: 'contact', label: 'İletişim' },
               ].map((item) => (
                 <button
                   key={item.id}
@@ -132,43 +127,12 @@ export default function Footer({ onNavigate }) {
               ))}
             </div>
           </div>
-
-          {/* GitHub Links */}
-          <div>
-            <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '20px', color: '#fff' }}>GitHub Bağlantıları</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <a
-                href="https://github.com/blackeker/ajans-demo"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#00f5d4', fontSize: '0.88rem', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px' }}
-              >
-                <GithubIcon size={16} />
-                <span>blackeker/ajans-demo</span>
-              </a>
-              <a
-                href="https://github.com/blackeker"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#94a3b8', fontSize: '0.88rem', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => (e.target.style.color = '#fff')}
-                onMouseLeave={(e) => (e.target.style.color = '#94a3b8')}
-              >
-                Geliştirici Profili (@blackeker)
-              </a>
-              <span style={{ fontSize: '0.8rem', color: '#64748b' }}>
-                Lisans: MIT (Özgür & Açık Kaynak Demo)
-              </span>
-            </div>
-          </div>
-
           {/* Social & Back to Top */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '20px', color: '#fff' }}>Sosyal Ağlar</h4>
               <div style={{ display: 'flex', gap: '12px' }}>
                 {[
-                  { icon: <GithubIcon size={18} />, href: 'https://github.com/blackeker/ajans-demo' },
                   { icon: <TwitterIcon size={18} />, href: 'https://x.com' },
                   { icon: <LinkedinIcon size={18} />, href: 'https://linkedin.com' },
                   { icon: <InstagramIcon size={18} />, href: 'https://instagram.com' },
@@ -234,7 +198,7 @@ export default function Footer({ onNavigate }) {
           }}
         >
           <div>
-            © {new Date().getFullYear()} NEXUS STUDIO. Tüm Hakları Saklıdır. Demo sürümüdür.
+            © {new Date().getFullYear()} DEMO STUDIO. Tüm Hakları Saklıdır. Demo sürümüdür.
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <span>Tasarım ve Kodlama:</span>

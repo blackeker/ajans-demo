@@ -126,7 +126,7 @@ export default function PortfolioSection() {
         <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 60px auto' }}>
           <div className="glass-pill" style={{ marginBottom: '16px', color: '#f72585' }}>
             <Layers size={14} />
-            <span>SEÇKİN PORTFOLYO</span>
+            <span>DEMO PORTFOLYO</span>
           </div>
           <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)', marginBottom: '20px', fontWeight: 800 }}>
             İlham Veren, <span className="text-gradient">Ödüllü Projelerimiz</span>
